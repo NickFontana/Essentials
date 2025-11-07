@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
-//Name: Unit4_CurvesLab.ma
-//Last modified: Fri, Nov 07, 2025 04:32:06 PM
+//Name: Heat_Lamp.ma
+//Last modified: Fri, Nov 07, 2025 04:43:45 PM
 //Codeset: 1252
 requires maya "2026";
 requires "stereoCamera" "10.0";
@@ -11,17 +11,17 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22000)";
-fileInfo "UUID" "FDD2A4A5-4531-DFED-6ECE-28B160C881B2";
+fileInfo "UUID" "314D22E7-4DDC-5527-CDCA-4E9D5B9C7982";
 createNode transform -s -n "persp";
 	rename -uid "53C52AB5-474E-76D8-3138-068DC98252C4";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.011129784162724587 0.090075877622514677 0.48825027108533359 ;
+	setAttr ".t" -type "double3" 0.0095343833534614966 0.11052218920956765 0.60309688561204666 ;
 	setAttr ".r" -type "double3" -729.93835274689195 -2509.7999999991534 1.0098839396477518e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "EB85AEEE-40C0-9B16-5DC7-30A18E3078BF";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 0.46750838508977455;
+	setAttr ".coi" 0.58597696465794202;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -30829,4 +30829,4 @@ connectAttr "groupId44.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId45.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId46.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId47.msg" ":initialShadingGroup.gn" -na;
-// End of Unit4_CurvesLab.ma
+// End of Heat_Lamp.ma
