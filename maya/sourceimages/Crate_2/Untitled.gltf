@@ -1,0 +1,285 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 1128,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 472,
+      "max": [
+        3.33352708816528,
+        0.5,
+        2.50617790222168
+      ],
+      "min": [
+        2.33352708816528,
+        -0.5,
+        1.50638794898987
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 472,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 472,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 472,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5125,
+      "count": 456,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 186,
+      "max": [
+        3.33315300941467,
+        0.654430985450745,
+        2.50698399543762
+      ],
+      "min": [
+        2.33315300941467,
+        0.54443097114563,
+        1.50698399543762
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 186,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 186,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 186,
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "generator": "Adobe Substance 3D Painter 11.1.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 4512,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 5664,
+      "byteOffset": 4512,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 5664,
+      "byteOffset": 10176,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 7552,
+      "byteOffset": 15840,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 3776,
+      "byteOffset": 23392,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1824,
+      "byteOffset": 27168,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2232,
+      "byteOffset": 28992,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2232,
+      "byteOffset": 31224,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2976,
+      "byteOffset": 33456,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1488,
+      "byteOffset": 36432,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 37920,
+      "uri": "Untitled.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "initialShadingGroup_baseColor.png"
+    },
+    {
+      "uri": "initialShadingGroup_occlusionRoughnessMetallic.png"
+    },
+    {
+      "uri": "initialShadingGroup_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "OPAQUE",
+      "name": "initialShadingGroup",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Crate_2_Body Crate_2",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 2,
+            "POSITION": 1,
+            "TANGENT": 3,
+            "TEXCOORD_0": 4
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Crate_2 Crate_2_Top",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 7,
+            "POSITION": 6,
+            "TANGENT": 8,
+            "TEXCOORD_0": 9
+          },
+          "indices": 5,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1,
+        3
+      ],
+      "name": "Crate2.obj",
+      "scale": [
+        0.00999999977648258,
+        0.00999999977648258,
+        0.00999999977648258
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "Crate_2_Body Crate_2"
+    },
+    {
+      "mesh": 0,
+      "name": "Crate_2_Body Crate_2"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "Crate_2 Crate_2_Top"
+    },
+    {
+      "mesh": 1,
+      "name": "Crate_2 Crate_2_Top"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9985,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
