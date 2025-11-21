@@ -2631,13 +2631,13 @@
       "uri": "Piping_normal.png"
     },
     {
-      "uri": "Roofing_baseColor.png"
+      "uri": "Roof_baseColor.png"
     },
     {
-      "uri": "Roofing_occlusionRoughnessMetallic.png"
+      "uri": "Roof_occlusionRoughnessMetallic.png"
     },
     {
-      "uri": "Roofing_normal.png"
+      "uri": "Roof_normal.png"
     },
     {
       "uri": "Upper_Walls_baseColor.png"
@@ -2706,7 +2706,7 @@
     },
     {
       "alphaMode": "OPAQUE",
-      "name": "Roofing",
+      "name": "Roof",
       "normalTexture": {
         "index": 11
       },
