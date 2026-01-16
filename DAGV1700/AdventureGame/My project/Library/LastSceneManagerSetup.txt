@@ -1,0 +1,5 @@
+sceneSetups:
+- path: C:/Users/Owner/Documents/GitHub/Essentials/DAGV1700/AdventureGame/Assets/Scenes/My_Scenes/New_Scene.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
