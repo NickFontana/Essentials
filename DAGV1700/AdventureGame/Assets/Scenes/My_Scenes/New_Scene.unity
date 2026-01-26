@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 32018915}
   - component: {fileID: 32018914}
   - component: {fileID: 32018913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 59941304}
   - component: {fileID: 59941303}
   - component: {fileID: 59941302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ Transform:
   m_GameObject: {fileID: 59941301}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: 3.1, z: 0}
+  m_LocalPosition: {x: 0.45, y: 3.05, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 157.80833}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 72486288}
   - component: {fileID: 72486287}
   - component: {fileID: 72486286}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 177698748}
   - component: {fileID: 177698747}
   - component: {fileID: 177698746}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +719,7 @@ GameObject:
   - component: {fileID: 183713945}
   - component: {fileID: 183713944}
   - component: {fileID: 183713943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor6 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +832,7 @@ GameObject:
   - component: {fileID: 188453499}
   - component: {fileID: 188453498}
   - component: {fileID: 188453497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 196258200}
   - component: {fileID: 196258199}
   - component: {fileID: 196258198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,7 +1240,7 @@ GameObject:
   - component: {fileID: 437213098}
   - component: {fileID: 437213097}
   - component: {fileID: 437213096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1410,7 +1410,7 @@ GameObject:
   - component: {fileID: 475746568}
   - component: {fileID: 475746567}
   - component: {fileID: 475746569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1614,7 +1614,7 @@ GameObject:
   - component: {fileID: 618933094}
   - component: {fileID: 618933093}
   - component: {fileID: 618933092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1784,7 +1784,7 @@ GameObject:
   - component: {fileID: 714682781}
   - component: {fileID: 714682780}
   - component: {fileID: 714682779}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1804,8 +1804,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleCharacterController
   moveSpeed: 5
-  jumpForce: 4
-  gravity: 0
+  jumpForce: 2.5
+  gravity: -9.81
 --- !u!143 &714682780
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1824,13 +1824,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 1.34
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!4 &714682781
 Transform:
   m_ObjectHideFlags: 0
@@ -1858,7 +1858,7 @@ GameObject:
   - component: {fileID: 814209442}
   - component: {fileID: 814209441}
   - component: {fileID: 814209440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2062,7 +2062,7 @@ GameObject:
   - component: {fileID: 985506998}
   - component: {fileID: 985506997}
   - component: {fileID: 985506999}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2448,7 +2448,7 @@ GameObject:
   - component: {fileID: 1203295112}
   - component: {fileID: 1203295111}
   - component: {fileID: 1203295110}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2675,7 +2675,7 @@ GameObject:
   - component: {fileID: 1275407557}
   - component: {fileID: 1275407556}
   - component: {fileID: 1275407558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3152,7 +3152,8 @@ GameObject:
   - component: {fileID: 1578209748}
   - component: {fileID: 1578209749}
   - component: {fileID: 1578209750}
-  m_Layer: 0
+  - component: {fileID: 1578209751}
+  m_Layer: 3
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3248,6 +3249,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlipTransformBehaviour
   key1: 275
   key2: 276
+  direction1: 0
+  direction2: 180
+--- !u!114 &1578209751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578209747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9914d55c3075a4b14a80c1204e72e335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlipTransformBehaviour
+  key1: 100
+  key2: 97
   direction1: 0
   direction2: 180
 --- !u!1001 &1611853506
@@ -3375,7 +3392,7 @@ GameObject:
   - component: {fileID: 1788968973}
   - component: {fileID: 1788968972}
   - component: {fileID: 1788968971}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3487,7 +3504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1821803020}
   - component: {fileID: 1821803021}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3761,7 +3778,7 @@ GameObject:
   - component: {fileID: 2091391270}
   - component: {fileID: 2091391269}
   - component: {fileID: 2091391268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3959,7 +3976,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 8713886}
-  - {fileID: 714682781}
   - {fileID: 196258200}
   - {fileID: 177698748}
   - {fileID: 183713945}
@@ -3990,6 +4006,7 @@ SceneRoots:
   - {fileID: 188453499}
   - {fileID: 437213098}
   - {fileID: 59941304}
+  - {fileID: 714682781}
   - {fileID: 1611853506}
   - {fileID: 1711184749}
   - {fileID: 437281426}
