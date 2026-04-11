@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 539445924762802765}
   - component: {fileID: 5160273092405858181}
   - component: {fileID: 7798770538417730820}
-  - component: {fileID: 819468049306113168}
+  - component: {fileID: 695922591886539396}
   - component: {fileID: 7336128725454041117}
-  - component: {fileID: 7078073388489481789}
+  - component: {fileID: 5478868295248910439}
+  - component: {fileID: 205699224098351034}
   m_Layer: 13
   m_Name: Key
   m_TagString: Untagged
@@ -116,7 +117,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4, y: 1.12, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &819468049306113168
+--- !u!114 &695922591886539396
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,13 +126,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3166498816353938969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7c4c067838ab4f4daf3ceea190e0b91, type: 3}
+  m_Script: {fileID: 11500000, guid: 20a8862fefc9a40de8a865b36e083f0d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SimpleTriggerEventBehaviour
-  awakeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerEvent:
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleIDMatchBehaviour
+  id: {fileID: 0}
+  matchEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5160273092405858181}
@@ -146,18 +145,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  noMatchEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7336128725454041117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,8 +160,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e78bdf5ed9784e75a92c53169c936b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleIDBehaviour
-  id: {fileID: 11400000, guid: 64c59e812861147a88d9e55a69834e31, type: 2}
---- !u!114 &7078073388489481789
+  id: {fileID: 11400000, guid: 39f9792d6aedc3c478026421004e123a, type: 2}
+--- !u!95 &5478868295248910439
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3166498816353938969}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 40bf1e17e21abec458a35d41152e1694, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &205699224098351034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
