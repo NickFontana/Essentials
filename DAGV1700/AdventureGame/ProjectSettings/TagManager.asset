@@ -43,3 +43,7 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
+  - 1Sky
+  - 2BackTreeLine
+  - 3FrontTreeLine
+  - 4ForeGround
