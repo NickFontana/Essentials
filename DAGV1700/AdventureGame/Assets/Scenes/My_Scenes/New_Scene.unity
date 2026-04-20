@@ -592,7 +592,7 @@ Transform:
   m_GameObject: {fileID: 8713883}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000000037237902, y: 2.442522e-10, z: -9.095439e-19, w: 1}
-  m_LocalPosition: {x: -16.01212, y: 3.1817596, z: -10}
+  m_LocalPosition: {x: -16.015701, y: 3.1817596, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7988,11 +7988,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!212 &989060530 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6639483922126601128, guid: 6d860454dbf0f6f43b67ed64d14129a8, type: 3}
-  m_PrefabInstance: {fileID: 4085709319249013384}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &992787683
 GameObject:
   m_ObjectHideFlags: 0
@@ -15475,6 +15470,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9108455077219720588, guid: 6d860454dbf0f6f43b67ed64d14129a8, type: 3}
   m_PrefabInstance: {fileID: 4085709319249013384}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1709427592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6424551248373712636, guid: 6d860454dbf0f6f43b67ed64d14129a8, type: 3}
+  m_PrefabInstance: {fileID: 4085709319249013384}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63726369e8ff894cbf663a873f479c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MySimpleCharacterController
 --- !u!1001 &1711184749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20244,7 +20250,7 @@ PrefabInstance:
     - target: {fileID: 4919726269445798456, guid: 9cfd348712bf98c478e96312869dc7a4, type: 3}
       propertyPath: triggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 989060530}
+      objectReference: {fileID: 0}
     - target: {fileID: 7879191761845579612, guid: 9cfd348712bf98c478e96312869dc7a4, type: 3}
       propertyPath: m_Name
       value: Chest
@@ -20323,6 +20329,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 134697132349608181, guid: 6d860454dbf0f6f43b67ed64d14129a8, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1709427592}
     - target: {fileID: 8974309060314746438, guid: 6d860454dbf0f6f43b67ed64d14129a8, type: 3}
       propertyPath: m_Name
       value: Player
@@ -20368,7 +20378,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4443958052919637043, guid: 6d860454dbf0f6f43b67ed64d14129a8, type: 3}
+    - {fileID: 6239396383162363954, guid: 6d860454dbf0f6f43b67ed64d14129a8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d860454dbf0f6f43b67ed64d14129a8, type: 3}
