@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// The SimpleCharacterController class controls basic movement of a 2D platformer character.
@@ -22,6 +22,18 @@ public class MySimpleCharacterController : MonoBehaviour
     private Transform thisTransform;
     private int jumpCount = 0;
     private int maxJumps = 1;
+    private bool isAttacking = false;
+    private Animator anim;
+    private bool canCombo = false;
+    private bool comboQueued = false;
+    private int attackIndex = 0;
+    public GameObject attackPoint;
+    public Transform attackPoint1;
+    public Transform attackPoint2;
+    public float radius1;
+    public float radius2;
+    public LayerMask enemies;
+    public float damage;
     //add a roll to the character controller
 
 
@@ -33,6 +45,7 @@ public class MySimpleCharacterController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         thisTransform = transform;
+        anim = GetComponentInChildren<Animator>();
     }
 
     /// <summary>
@@ -44,6 +57,29 @@ public class MySimpleCharacterController : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
         ApplyGravity();
         KeepCharacterOnXAxis();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            if (!isAttacking)
+            {
+                isAttacking = true;
+                attackIndex = 1;
+
+                anim.SetBool("isAttacking", true);
+                anim.SetInteger("attackIndex", attackIndex);
+
+                ///Debug.Log("Attack 1 triggered");
+            }
+
+            else if (canCombo)
+            {
+                attackIndex = 2;
+                anim.SetInteger("attackIndex", attackIndex);
+
+                ///Debug.Log("Combo triggered → Attack 2");
+            }
+        }
     }
 
     /// <summary>
@@ -51,6 +87,9 @@ public class MySimpleCharacterController : MonoBehaviour
     /// </summary>
     private void MoveCharacter()
     {
+        if (isAttacking)
+            return;
+
         // Handle horizontal movement
         var moveInput = Input.GetAxis("Horizontal");
         var move = new Vector3(moveInput, 0f, 0f) * (moveSpeed * Time.deltaTime);
@@ -95,4 +134,84 @@ public class MySimpleCharacterController : MonoBehaviour
         currentPosition.z = 0f;
         thisTransform.position = currentPosition;
     }
+
+    private void StartAttack()
+    {
+        isAttacking = true;
+        anim.SetBool("isAttacking", true);
+    }
+
+    public void EnableComboWindow()
+    {
+        canCombo = true;
+        ///Debug.Log("canCombo = true");
+    }
+
+    public void EndCombo()
+    {
+        isAttacking = false;
+        attackIndex = 0;
+        canCombo = false;
+
+        anim.SetBool("isAttacking", false);
+        anim.SetInteger("attackIndex", 0);
+    }
+
+    public void DisableComboWindow()
+    {
+        canCombo = false;
+        ///Debug.Log("canCombo = false");
+    }
+
+    public void EndAttack()
+    {
+    if (comboQueued || attackIndex == 2)
+    {
+        ///attackIndex = 0;
+        return;
+    }
+
+    isAttacking = false;
+    attackIndex = 0;
+    canCombo = false;
+
+    anim.SetBool("isAttacking", false);
+    anim.SetInteger("attackIndex", 0);
+    }
+
+    public void Attack()
+    {
+        Transform point;
+        float radiusToUse;
+        ///Debug.Log("AttackIndex at hit time: " + attackIndex);
+
+        if (attackIndex == 2)
+        {
+            point = attackPoint2;
+            radiusToUse = radius2;
+        }
+        else
+        {
+            point = attackPoint1;
+            radiusToUse = radius1;
+        }
+
+        Collider[] enemy = Physics.OverlapSphere(
+            point.position,
+            radiusToUse,
+            enemies
+        );
+
+        foreach (Collider enemyGameobject in enemy)
+        {
+            Debug.Log("Hit enemy: " + enemyGameobject.name);
+            enemyGameobject.GetComponent<EnemyHealth>().health -= damage;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(attackPoint.transform.position, radius1);
+    }
+
 }

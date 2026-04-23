@@ -25,6 +25,15 @@ public class MyCharacterAnimationController : MonoBehaviour
 
     private void HandleAnimations()
     {
+        bool isAttacking = animator.GetBool("isAttacking");
+
+        if (isAttacking)
+        {
+            animator.SetBool(run, false);
+            animator.SetBool(idle, false);
+            return;
+        }
+
         float horizontalMove = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetButtonDown("Jump"))
@@ -46,5 +55,30 @@ public class MyCharacterAnimationController : MonoBehaviour
             animator.SetBool(run, false);
             animator.SetBool(idle, true);
         }
+    }
+
+    public void EndAttack()
+    {
+        GetComponentInParent<MySimpleCharacterController>().EndAttack();
+    }
+
+    public void EnableComboWindow()
+    {
+        GetComponentInParent<MySimpleCharacterController>().EnableComboWindow();
+    }
+
+    public void DisableComboWindow()
+    {
+        GetComponentInParent<MySimpleCharacterController>().DisableComboWindow();
+    }
+
+    public void Attack()
+    {
+        GetComponentInParent<MySimpleCharacterController>().Attack();
+    }
+
+    public void EndCombo()
+    {
+        GetComponentInParent<MySimpleCharacterController>().EndCombo();
     }
 }
