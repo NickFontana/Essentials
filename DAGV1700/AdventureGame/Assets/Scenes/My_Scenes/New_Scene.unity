@@ -592,7 +592,7 @@ Transform:
   m_GameObject: {fileID: 8713883}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000000037237902, y: 2.442522e-10, z: -9.095439e-19, w: 1}
-  m_LocalPosition: {x: -16.01272, y: 3.1817496, z: -10}
+  m_LocalPosition: {x: -16.015965, y: 3.1817596, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11259,6 +11259,14 @@ PrefabInstance:
       propertyPath: matchEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: MySimpleImageBehavior, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 2164272488698284533, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 121028678}
+    - target: {fileID: 2164272488698284533, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateText
+      objectReference: {fileID: 0}
     - target: {fileID: 3444216991205335778, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: m_Name
       value: Goblin (3)
@@ -11304,10 +11312,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6689490309714039572, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6689490309714039572, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: 'patrolPointList.Array.data[0]'
       value: 
       objectReference: {fileID: 1004041295}
     - target: {fileID: 6689490309714039572, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: 'patrolPointList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 697476890}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1709427591}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: attackCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: 'patrolPointList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1004041295}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: 'patrolPointList.Array.data[1]'
       value: 
       objectReference: {fileID: 697476890}
@@ -12739,11 +12767,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3284380142945954006, guid: fc9968c4dc5d5264b89413cdfe5d303e, type: 3}
   m_PrefabInstance: {fileID: 1423326209}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1427526855 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3444216991205335778, guid: bd21024437839b641a447df4415e67e2, type: 3}
-  m_PrefabInstance: {fileID: 7425124833392114185}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1428883320
 GameObject:
@@ -18598,6 +18621,14 @@ PrefabInstance:
       propertyPath: matchEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: MySimpleImageBehavior, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 2164272488698284533, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 121028678}
+    - target: {fileID: 2164272488698284533, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateText
+      objectReference: {fileID: 0}
     - target: {fileID: 3444216991205335778, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: m_Name
       value: Goblin (2)
@@ -18643,10 +18674,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6689490309714039572, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6689490309714039572, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: 'patrolPointList.Array.data[0]'
       value: 
       objectReference: {fileID: 1403277557}
     - target: {fileID: 6689490309714039572, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: 'patrolPointList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 745104490}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1709427591}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: attackCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: 'patrolPointList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1403277557}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: 'patrolPointList.Array.data[1]'
       value: 
       objectReference: {fileID: 745104490}
@@ -19291,6 +19342,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1524444262}
     m_Modifications:
+    - target: {fileID: 914353189899789223, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1368657509689531931, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: matchEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -19306,6 +19361,14 @@ PrefabInstance:
     - target: {fileID: 1368657509689531931, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: matchEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: MySimpleImageBehavior, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164272488698284533, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 121028678}
+    - target: {fileID: 2164272488698284533, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateText
       objectReference: {fileID: 0}
     - target: {fileID: 3444216991205335778, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: m_Name
@@ -19352,6 +19415,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6689490309714039572, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6689490309714039572, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: 'patrolPointList.Array.data[0]'
       value: 
       objectReference: {fileID: 794234531}
@@ -19359,6 +19426,26 @@ PrefabInstance:
       propertyPath: 'patrolPointList.Array.data[1]'
       value: 
       objectReference: {fileID: 1403277557}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1709427591}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: attackCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: 'patrolPointList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 794234531}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: 'patrolPointList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1403277557}
+    - target: {fileID: 7406475590036914846, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20342,7 +20429,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4919726269445798456, guid: 9cfd348712bf98c478e96312869dc7a4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -20916,17 +21004,17 @@ PrefabInstance:
       propertyPath: matchEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 445633655}
-    - target: {fileID: 1368657509689531931, guid: bd21024437839b641a447df4415e67e2, type: 3}
-      propertyPath: matchEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UpdateWithFloatData
-      objectReference: {fileID: 0}
-    - target: {fileID: 1368657509689531931, guid: bd21024437839b641a447df4415e67e2, type: 3}
-      propertyPath: matchEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: MySimpleImageBehavior, Assembly-CSharp
-      objectReference: {fileID: 0}
+    - target: {fileID: 2164272488698284533, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 121028678}
     - target: {fileID: 3444216991205335778, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: m_Name
       value: Goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767686137063835072, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5738656655268754141, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20969,14 +21057,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6689490309714039572, guid: bd21024437839b641a447df4415e67e2, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6689490309714039572, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: 'patrolPointList.Array.data[0]'
       value: 
       objectReference: {fileID: 301316061}
     - target: {fileID: 6689490309714039572, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: 'patrolPointList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 957776761}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1709427591}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: attackCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
+      propertyPath: 'patrolPointList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 301316061}
+    - target: {fileID: 6737693327094118470, guid: bd21024437839b641a447df4415e67e2, type: 3}
       propertyPath: 'patrolPointList.Array.data[1]'
       value: 
       objectReference: {fileID: 957776761}
@@ -20987,30 +21087,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3444216991205335778, guid: bd21024437839b641a447df4415e67e2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7425124833392114196}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd21024437839b641a447df4415e67e2, type: 3}
 --- !u!4 &7425124833392114186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5738656655268754141, guid: bd21024437839b641a447df4415e67e2, type: 3}
   m_PrefabInstance: {fileID: 7425124833392114185}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7425124833392114196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427526855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34781a95eda78542a45a8da44e1b7c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  health: 1
-  currentHealth: 0
 --- !u!1001 &7459113407611579992
 PrefabInstance:
   m_ObjectHideFlags: 0
