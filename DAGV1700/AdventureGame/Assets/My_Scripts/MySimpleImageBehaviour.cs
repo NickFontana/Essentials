@@ -16,6 +16,12 @@ public class MySimpleImageBehavior : MonoBehaviour
 
     public SimpleFloatData dataObj;
 
+    private bool hasDied = false;
+
+    public float deathDelay = 1.5f;
+
+    public MySimpleCharacterController player;
+
     private void Start()
 
     {
@@ -32,14 +38,20 @@ public class MySimpleImageBehavior : MonoBehaviour
 
         imageObj.fillAmount = dataObj.value;
 
-        if (dataObj.value <= 0f)
-
+        if (dataObj.value <= 0f && !hasDied)
         {
+            hasDied = true;
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            player.Die();
+
+            Invoke(nameof(ReloadScene), deathDelay);
 
         }
 
+    }
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

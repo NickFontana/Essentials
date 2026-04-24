@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
 
     public IntEvent OnDeath;
     public int goldValue = 3;
-
+    
     //Start is called before the first frame update
     void Start()
     {
@@ -34,7 +34,7 @@ public class EnemyHealth : MonoBehaviour
             hasDied = true;
 
             anim.SetBool("isDead", true);
-            Debug.Log("Enemy is dead");
+            ///Debug.Log("Enemy is dead");
 
             OnDeath?.Invoke(goldValue);
 
@@ -60,10 +60,6 @@ public class EnemyHealth : MonoBehaviour
                 behaviour.enabled = false;
             }
 
-            ///if (comp is Collider collider)
-           /// {
-           ///     collider.enabled = false;
-           /// }
         }
     }
 

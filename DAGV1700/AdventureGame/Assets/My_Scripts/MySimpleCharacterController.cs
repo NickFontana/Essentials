@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// The SimpleCharacterController class controls basic movement of a 2D platformer character.
@@ -34,6 +35,11 @@ public class MySimpleCharacterController : MonoBehaviour
     public float radius2;
     public LayerMask enemies;
     public float damage;
+    public UnityEvent OnAttackHit;
+    public bool isDead = false;
+    private bool isHit = false;
+    public float hitStunDuration = 0.3f;
+
     //add a roll to the character controller
 
 
@@ -53,6 +59,8 @@ public class MySimpleCharacterController : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        if (isDead || isHit) return;
+
         MoveCharacter();
         controller.Move(velocity * Time.deltaTime);
         ApplyGravity();
@@ -87,6 +95,8 @@ public class MySimpleCharacterController : MonoBehaviour
     /// </summary>
     private void MoveCharacter()
     {
+        if (isDead)
+            return;
         if (isAttacking)
             return;
 
@@ -204,8 +214,9 @@ public class MySimpleCharacterController : MonoBehaviour
 
         foreach (Collider enemyGameobject in enemy)
         {
-            Debug.Log("Hit enemy: " + enemyGameobject.name);
+            ///Debug.Log("Hit enemy: " + enemyGameobject.name);
             enemyGameobject.GetComponent<EnemyHealth>().health -= damage;
+            OnAttackHit?.Invoke();
         }
     }
 
@@ -213,5 +224,40 @@ public class MySimpleCharacterController : MonoBehaviour
     {
         Gizmos.DrawWireSphere(attackPoint.transform.position, radius1);
     }
+
+    public void TakeHit()
+    {
+        if (isDead) return;
+
+        isHit = true;
+
+        isAttacking = false;
+        canCombo = false;
+
+        anim.SetBool("isAttacking", false);
+        anim.SetInteger("attackIndex", 0);
+
+        anim.SetTrigger("takeHit");
+
+        velocity = Vector3.zero;
+
+        Invoke(nameof(RecoverFromHit), hitStunDuration);
+    }
+
+    void RecoverFromHit()
+    {
+        isHit = false;
+    }
+
+    public void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+        anim.SetBool("isAttacking", false);
+        anim.SetInteger("attackIndex", 0);
+        anim.SetTrigger("death");
+        velocity = Vector3.zero;
+    }
+
 
 }
