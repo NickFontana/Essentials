@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 /// <summary>
 /// The SimpleCharacterController class controls basic movement of a 2D platformer character.
@@ -39,6 +40,15 @@ public class MySimpleCharacterController : MonoBehaviour
     public bool isDead = false;
     private bool isHit = false;
     public float hitStunDuration = 0.3f;
+    private bool isDashing = false;
+    public float dashSpeed = 20f;
+    public float dashTime = 0.15f;
+    private float dashTimer;
+    public float dashCooldown = 0.5f;
+    private float dashCooldownTimer;
+    public float trailTimeAfterDash = 0.15f;
+    private float trailTimer;
+    TrailRenderer trailRenderer;
 
     //add a roll to the character controller
 
@@ -52,6 +62,9 @@ public class MySimpleCharacterController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         thisTransform = transform;
         anim = GetComponentInChildren<Animator>();
+        trailRenderer = GetComponent<TrailRenderer>();
+        trailRenderer.enabled = true;
+        trailRenderer.emitting = false;
     }
 
     /// <summary>
@@ -59,12 +72,66 @@ public class MySimpleCharacterController : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        if (!isDashing && trailRenderer.enabled)
+        {
+            if (trailTimer > 0f)
+            {
+                trailTimer -= Time.deltaTime;
+            }
+            else
+            {
+                trailRenderer.emitting = false;
+            }
+        }
+
+        if (dashCooldownTimer > 0f)
+        {
+            dashCooldownTimer -= Time.deltaTime;
+        }
+
         if (isDead || isHit) return;
+        if (isDashing)
+        {
+            velocity.y = 0f;
+
+            float direction = Input.GetAxisRaw("Horizontal");
+
+            if (direction == 0)
+                direction = Mathf.Sign(transform.localScale.x);
+
+            isAttacking = false;
+            canCombo = false;
+            anim.SetBool("isAttacking", false);
+            anim.SetInteger("attackIndex", 0);
+
+            Vector3 dashMove = new Vector3(direction * dashSpeed, 0f, 0f);
+            controller.Move(dashMove * Time.deltaTime);
+
+            dashTimer -= Time.deltaTime;
+
+            if (dashTimer <= 0f)
+                isDashing = false;
+            trailTimer = trailTimeAfterDash;
+
+            return;
+        }
 
         MoveCharacter();
         controller.Move(velocity * Time.deltaTime);
         ApplyGravity();
         KeepCharacterOnXAxis();
+        bool isFallingNow = velocity.y < 0f && !controller.isGrounded;
+        anim.SetBool("isFalling", isFallingNow);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && dashCooldownTimer <= 0f)
+        {
+            isDashing = true;
+            dashTimer = dashTime;
+
+            velocity.y = 0f;
+            trailRenderer.emitting = true;
+            dashCooldownTimer = dashCooldown;
+        }
 
         if (Input.GetMouseButtonDown(0))
         {

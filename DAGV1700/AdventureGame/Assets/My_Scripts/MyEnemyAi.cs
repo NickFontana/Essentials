@@ -24,6 +24,9 @@ public class MyEnemyAi : MonoBehaviour
 
     public float attackRadius1 = 1f;
     public float attackRadius2 = 1f;
+    private float facingDir = 1f;
+    private float attackPoint1BaseX;
+    private float attackPoint2BaseX;
 
     public LayerMask playerLayer;
     public float damage = 0.1f;
@@ -33,9 +36,14 @@ public class MyEnemyAi : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
+
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        attackPoint1BaseX = attackPoint1.localPosition.x;
+        attackPoint2BaseX = attackPoint2.localPosition.x;
     }
 
     void Update()
@@ -103,12 +111,36 @@ public class MyEnemyAi : MonoBehaviour
 
         anim.SetInteger("attackIndex", -1);
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
     void FacePlayer()
     {
         float deltaX = player.position.x - transform.position.x;
 
+        float sign = deltaX < 0f ? 1f : -1f;
+
         spriteRenderer.flipX = deltaX < 0f;
+
+        Vector3 p1 = attackPoint1.localPosition;
+        p1.x = attackPoint1BaseX * sign;
+        attackPoint1.localPosition = p1;
+
+        Vector3 p2 = attackPoint2.localPosition;
+        p2.x = attackPoint2BaseX * sign;
+        attackPoint2.localPosition = p2;
+
+    }
+
+    Vector3 GetAttackPointPosition(Transform attackPoint)
+    {
+        Vector3 pos = transform.position;
+
+        pos.x += attackPoint.localPosition.x * facingDir;
+        pos.y += attackPoint.localPosition.y;
+        pos.z += attackPoint.localPosition.z;
+
+        return pos;
     }
 
     void Attack()
@@ -119,6 +151,13 @@ public class MyEnemyAi : MonoBehaviour
         attackTimer = attackCooldown;
 
         int attackIndex = Random.Range(0, 2);
+
+        Transform point = (attackIndex == 0) ? attackPoint1 : attackPoint2;
+        float radius = (attackIndex == 0) ? attackRadius1 : attackRadius2;
+
+        Vector3 attackPos = GetAttackPointPosition(point);
+
+        Collider[] hit = Physics.OverlapSphere(attackPos, radius, playerLayer);
 
         anim.ResetTrigger("attack");
         anim.SetInteger("attackIndex", attackIndex);
